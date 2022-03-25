@@ -25,6 +25,9 @@ def validate_ip_address(address) -> bool:
 
 
 def get_ip_from_url(url):
+    """
+    Convert URL to IP address
+    """
     ip = None
     try:
         ip = socket.gethostbyname(url)
