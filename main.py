@@ -26,7 +26,12 @@ def validate_ip_address(address) -> bool:
 
 
 def get_ip_from_url(url):
-    ip = socket.gethostbyname(url)
+    ip = None
+    try:
+        ip = socket.gethostbyname(url)
+    except socket.gaierror:
+        print(colored('Invalid URL', 'red'))
+
     return ip
 
 
@@ -92,15 +97,18 @@ def main():
     show_own_ip_info()
 
     url = input("Enter URL / IP : ")
-    ip = ''
+    ip = None
     if not validate_ip_address(url):
         ip = get_ip_from_url(url)
-    info = get_ip_data(ip)
-    if info:
-        print_ip_info(info)
-        save_ip_map(info)
+    if ip:
+        info = get_ip_data(ip)
+        if info:
+            print_ip_info(info)
+            save_ip_map(info)
+        else:
+            print("No data found")
     else:
-        print("No data found")
+        print(colored("Invalid IP", 'red'))
 
 
 if __name__ == '__main__':
