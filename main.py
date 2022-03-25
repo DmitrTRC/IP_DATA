@@ -9,6 +9,7 @@ from pyfiglet import Figlet
 from termcolor import colored
 
 
+# FIXME: Exception handling for invalid IP / URL
 def validate_ip_address(address) -> bool:
     status = False  # False = invalid, True = valid
     try:
