@@ -9,7 +9,6 @@ from pyfiglet import Figlet
 from termcolor import colored
 
 
-# FIXME: Exception handling for invalid IP / URL
 # TODO: Add question to save map to file
 # TODO: Parse Arguments
 
