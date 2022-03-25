@@ -11,6 +11,8 @@ from termcolor import colored
 
 # FIXME: Exception handling for invalid IP / URL
 # TODO: Add question to save map to file
+# TODO: Parse Arguments
+
 def validate_ip_address(address) -> bool:
     status = False  # False = invalid, True = valid
     try:
